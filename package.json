@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "mock-kimlikas",
+  "version": "0.0.0",
+  "description": "KimlikAŞ yapmacık sunucu",
+  "main": "index.js",
+  "author": "KimlikDAO <dao@kimlikdao.org>"
+}

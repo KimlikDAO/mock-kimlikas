@@ -1,0 +1,13 @@
+type = "javascript"
+account_id = "8f0c2f2271ff857947d9a5b2c38595a0"
+zone_id = "5068cf6bab745b24ec5c3ad210a3b719"
+compatibility_date = "2022-04-14"
+
+name = "mock-kimlikas"
+workers_dev = false
+route = "https://mock-api.kimlikas.com"
+
+[env.dev]
+name = "mock-kimlikas-dev"
+workers_dev = true
+route = ""
