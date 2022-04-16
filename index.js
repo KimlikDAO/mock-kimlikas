@@ -24,11 +24,15 @@ function base64Encode(buf) {
  * @return {Promise<Result>}
  */
 async function handleRequest(request) {
-  if (request.method !== "POST") {
-    return hata('POST gerekli', 405);
+  const url = new URL(request.url)
+
+  if (request.method !== "GET") {
+    return hata('GET gerekli', 405);
   }
+
   // (0) Imza isteğini oku
-  const { oauth_code, taahhüt } = await request.json();
+  const oauth_code = url.searchParams.get('oauth_code');
+  const taahhüt = url.searchParams.get('taahhüt');
 
   // (1) Access tokenini al
   const token_req_param = {
@@ -81,7 +85,10 @@ async function handleRequest(request) {
 
   // (4) Imzali kullanıcı bilgilerini geri yolla.
   return new Response(JSON.stringify(bilgi), {
-    headers: { 'content-type': 'application/json' },
+    headers: {
+      'content-type': 'application/json;charset=utf-8',
+      'access-control-allow-origin': '*'
+    },
   })
 }
 

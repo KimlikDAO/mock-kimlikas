@@ -5,7 +5,7 @@ compatibility_date = "2022-04-14"
 
 name = "mock-kimlikas"
 workers_dev = false
-route = "https://mock-api.kimlikas.com"
+route = "https://mock-api.kimlikas.com/*"
 
 [env.dev]
 name = "mock-kimlikas-dev"
