@@ -32,7 +32,7 @@ async function handleRequest(request) {
 
   // (0) Imza isteğini oku
   const oauth_code = url.searchParams.get('oauth_code');
-  const taahhüt = url.searchParams.get('taahhüt');
+  const taahhüt = url.searchParams.get('taahhüt') || url.searchParams.get('taahhut');
 
   // (1) Access tokenini al
   const token_req_param = {
